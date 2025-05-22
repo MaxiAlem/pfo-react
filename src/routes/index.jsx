@@ -3,12 +3,10 @@ import Home from "../pages/Home";
 
 
 const AppRoutes = () => {
-  return (<Routes>
-    
-    <Route element={<Home/>}>
-   
-
-    </Route>
+  return (
+  <Routes>
+    <Route path="/" element={ <Home/>} />
+  
   </Routes>
   )
 };
