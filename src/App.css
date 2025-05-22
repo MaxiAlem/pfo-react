@@ -1,42 +1,99 @@
-#root {
+/*#root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+ 
   text-align: center;
+}*/
+
+/* === MainLayoutr === */
+.layout-container {
+  display: flex;
+  min-height: 100vh;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* todo menos sidebar */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: #f9fafb;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+main {
+  flex: 1;
+  padding: 1.5rem; /* p-6 = 24px */
+}
+/* === HEADER === */
+header {
+  background-color: #0369a1; 
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+header h1 {
+  font-size: 1.25rem; 
+  font-weight: 600;  
 }
 
-.card {
-  padding: 2em;
+/* === FOOTER === */
+footer {
+  background-color: #f3f4f6; 
+  color: #4b5563; 
+  font-size: 1rem; 
+  padding: 1rem 0;
+  text-align: center;
+  border-top: 1px solid #e5e7eb; 
+  margin-top: auto;
 }
 
-.read-the-docs {
-  color: #888;
+footer a {
+  color: inherit;
+  text-decoration: none;
+  margin: 0 0.5rem;
 }
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* === SIDEBAR === */
+.sidebar {
+  width: 16rem; 
+  min-height: 100vh;
+  background-color: #0369a1; 
+  color: #e0f2fe; 
+  padding: 1rem;
+}
+
+.sidebar img {
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+
+.sidebar nav {
+  padding-top: 1rem;
+}
+
+.sidebar a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: 1rem;
+  border-radius: 0.5rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  background-color: #0c4a6e; 
+}
+
+.sidebar a.active {
+  background-color: #075985;
+}
+.logo{
+  width: 100%; /*atado al tamaño del sidebar*/
+}
+
