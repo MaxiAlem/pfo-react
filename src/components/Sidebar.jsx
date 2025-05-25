@@ -1,34 +1,41 @@
 import { Link, useLocation } from "react-router-dom";
-import logo from '../assets/climo.webp';
+import logo from "../assets/climo.webp";
 
-const Sidebar = () => {
-  const { pathname } = useLocation()
+const Sidebar = ({ isOpen, onClose }) => {
+  const { pathname } = useLocation();
 
   const menuItems = [
-    { name: "pagina1", path: "/pag1" },
-    { name: "pagina2", path: "/pag2" },
-    { name: "pagina", path: "/pag3" },
-    // Agregá más según tu app
-  ]
+    { name: "Presentación", path: "/presentacion" },
+    { name: "Perfiles", path: "/perfiles" },
+    { name: "Json", path: "/json" },
+    { name: "API", path: "/api" },
+    { name: "Bitácora", path: "/bitacora" },
+  ];
 
   return (
-    <div className="sidebar">
-      <img src=""></img>
-      <img src={logo} alt="Logo" className="logo" />
+    <>
+      <div className={`overlay ${isOpen ? "show" : ""}`} onClick={onClose}></div>
 
-      <nav >
-        {menuItems.map((item) => (
-          <Link
-            key={item.path}
-            to={item.path}
-            className=""
-          >
-            {item.name}
-          </Link>
-        ))}
-      </nav>
-    </div>
-  )
-}
+      <aside className={`sidebar ${isOpen ? "open" : ""}`}>
+        <div className="sidebar-header">
+          <img src={logo} alt="Logo" className="logo" />
+          <button className="close-btn" onClick={onClose}>×</button>
+        </div>
+        <nav>
+          {menuItems.map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className={`sidebar-link ${pathname === item.path ? "active" : ""}`}
+              onClick={onClose} // para cerrar al hacer clic en mobile
+            >
+              {item.name}
+            </Link>
+          ))}
+        </nav>
+      </aside>
+    </>
+  );
+};
 
-export default Sidebar
+export default Sidebar;

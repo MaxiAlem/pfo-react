@@ -25,16 +25,34 @@ main {
 }
 /* === HEADER === */
 header {
-  background-color: #0369a1; 
+  display: flex;
+  align-items: center;
+  background-color: #3b5897; 
   color: white;
   padding: 1rem 0;
   text-align: center;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); 
+  border-bottom: 1px solid #ddd;
 }
 
 header h1 {
   font-size: 1.25rem; 
   font-weight: 600;  
+}
+.hamburger {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 1rem;
+  display: block; /* visible por defecto */
+}
+
+/* En pantallas grandes, lo ocultás */
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
 }
 
 /* === FOOTER === */
@@ -59,22 +77,57 @@ footer a:hover {
 }
 
 /* === SIDEBAR === */
+
 .sidebar {
-  width: 16rem; 
-  min-height: 100vh;
-  background-color: #0369a1; 
-  color: #e0f2fe; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 11rem;
+  height: 100%;
+  background-color: #3b5897; 
   padding: 1rem;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar.open {
+  transform: translateX(0);
+}
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.sidebar img {
-  display: block;
-  margin: 0 auto 1rem auto;
+
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
 }
 
 .sidebar nav {
-  padding-top: 1rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
 }
+
+.sidebar-link {
+  padding: 0.75rem;
+  text-decoration: none;
+  color: #333;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
 
 .sidebar a {
   display: block;
@@ -86,14 +139,41 @@ footer a:hover {
   text-decoration: none;
 }
 
-.sidebar a:hover {
-  background-color: #0c4a6e; 
-}
-
+.sidebar a:hover,
 .sidebar a.active {
-  background-color: #075985;
-}
-.logo{
-  width: 100%; /*atado al tamaño del sidebar*/
+  background-color: #dee2ed; 
+  color: #283c66;
 }
 
+/* overlay para mobile */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* En desk siempre visible */
+@media (min-width: 768px) {
+  .sidebar {
+    transform: translateX(0);
+    position: static;
+    height: 100vh;
+  }
+
+  .close-btn,
+  .overlay {
+    display: none;
+  }
+}

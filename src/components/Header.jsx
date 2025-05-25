@@ -1,9 +1,12 @@
-const Header = () => {
-    return (
-      <header className="">
-        <h1 className="">asereje</h1>
-      </header>
-    );
-  };
-  
-  export default Header;
+const Header = ({ onToggleSidebar }) => {
+  return (
+    <header className="header">
+      <button className="hamburger" onClick={onToggleSidebar}>
+        ☰
+      </button>
+      <h1>heade header header</h1>
+    </header>
+  );
+};
+
+export default Header;
