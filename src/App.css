@@ -1,42 +1,83 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.content {
+  margin-left: 60px;
+  flex: 1;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+.app:has(.sidebar.expanded) .content {
+  margin-left: 250px;
+}
+
+.weather-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--card-background);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--shadow-color);
+  max-width: 200px;
   text-align: center;
+  color: var(--text-color);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.theme-toggle {
+  position: absolute;
+  top: 10px;
+  right: 60px; /* Evita superposición con el hamburguesa */
+  padding: 8px 16px;
+  background: var(--accent-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.theme-toggle:hover {
+  background: #e6b800;
+}
+
+body.dark .theme-toggle:hover {
+  background: #ccaa00;
+}
+
+@media (max-width: 768px) {
+  .content {
+    margin-left: 0;
+    padding-top: 50px; /* Espacio para el toggle */
   }
-  to {
-    transform: rotate(360deg);
+
+  .app:has(.sidebar.expanded) .content {
+    margin-left: 0;
+  }
+
+  .weather-widget {
+    max-width: 120px;
+    font-size: 0.8rem;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .theme-toggle {
+    right: 50px;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media (max-width: 480px) {
+  .content {
+    padding: 10px;
   }
-}
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  .theme-toggle {
+    top: 5px;
+    right: 45px;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
 }

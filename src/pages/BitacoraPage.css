@@ -1,0 +1,32 @@
+.bitacora-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.bitacora-page h1 {
+  font-size: 2rem;
+  color: var(--text-color, #333);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.bitacora-section {
+  margin-bottom: 20px;
+}
+
+.bitacora-section h2 {
+  font-size: 1.5rem;
+  color: var(--primary-color, #007bff);
+  margin-bottom: 10px;
+}
+
+.bitacora-section ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: var(--text-color, #666);
+}
+
+.bitacora-section li {
+  margin-bottom: 5px;
+}
