@@ -1,12 +1,41 @@
-# React + Vite
+# Weather App - TPG1
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web para explorar el clima global, buscar ciudades, mostrar un widget en tiempo real, y documentar el desarrollo.
 
-Currently, two official plugins are available:
+## Instalación
+1. Clona el repositorio: `git clone <URL>`
+2. Instala dependencias: `npm install`
+3. Crea `.env` con: `VITE_OPENWEATHER_API_KEY=tu_clave`
+4. Ejecuta: `npm run dev`
+5. Construye: `npm run build`
+6. Previsualiza: `npm run preview`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Estructura
+- `src/components/Weather/`: Carrusel, buscador, widget.
+- `src/components/Sidebar/`: Barra de navegación.
+- `src/pages/`: Home, Search, Profiles, JsonData, Bitacora.
+- `src/utils/api.js`: Llamadas a la API de OpenWeather.
+- `src/data/`: Archivos JSON (weatherHistory.json).
 
-## Expanding the ESLint configuration
+## Funcionalidades
+- **Inicio**: Carrusel con clima de ciudades globales.
+- **Buscar**: Buscador de ciudades con historial de búsquedas.
+- **Perfiles**: Información de los integrantes.
+- **Datos JSON**: Tabla con historial de clima.
+- **Bitácora**: Documentación del desarrollo.
+- **Widget**: Clima basado en geolocalización por IP.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Contribuciones
+- **Integrante 1 (Juan Pérez)**: Diseñó Home.jsx y Sidebar.jsx.
+- **Integrante 2 ([Tu Nombre])**: Desarrolló WeatherCarousel, WeatherSearch, WeatherWidget, perfiles, JsonDataPage, BitacoraPage, y resolvió errores.
+- **Integrante 3 (María Gómez)**: Gestionó datos JSON y bitácora.
+
+## Tecnologías
+- React, Vite, React Router, Axios, react-slick, OpenWeather API.
+
+## Capturas
+- [Añade capturas de pantalla de cada página]
+
+## Notas
+- Asegúrate de tener una clave válida de OpenWeather API.
+- El proyecto es responsivo y optimizado para producción.
