@@ -8,6 +8,7 @@
   --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
+
 body.dark {
   --primary-color: #2a3b66;
   --secondary-color: #5b6b99;
@@ -29,3 +30,17 @@ body {
 * {
   box-sizing: border-box;
 }
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
