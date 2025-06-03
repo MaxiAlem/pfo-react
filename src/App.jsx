@@ -13,10 +13,12 @@ import BitacoraPage from './pages/BitacoraPage.jsx';
 import './App.css';
 
 const ThemeToggle = () => {
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const { isDarkMode, toggleTheme } = useContext(ThemeContext);
+  console.log('Modo oscuro:', isDarkMode); // para confirmar
   return (
     <button className="theme-toggle" onClick={toggleTheme}>
-      {theme === 'light' ? '🌙' : '☀️'}
+         {isDarkMode ? '☀️' : '🌙'}
+      
     </button>
   );
 };

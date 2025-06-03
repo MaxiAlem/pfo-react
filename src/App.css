@@ -10,7 +10,7 @@
 
 
 body.dark {
-  --primary-color: #2a3b66;
+  --primary-color: #acb4c9;
   --secondary-color: #5b6b99;
   --card-background: #3c465c;
   --background-color: #1e2a44;
@@ -29,6 +29,16 @@ body {
 
 * {
   box-sizing: border-box;
+}
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 @media (prefers-color-scheme: light) {
