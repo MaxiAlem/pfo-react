@@ -7,7 +7,7 @@ import project1Img from '../../assets/ProfileIntegrante2/project1.jpg';
 import project2Img from '../../assets/ProfileIntegrante2/project2.jpg';
 import project3Img from '../../assets/ProfileIntegrante2/project3.JPG';
 import interstellarImg from '../../assets/ProfileIntegrante2/interstellar.jpg';
-import elPadrinoImg from '../../assets/ProfileIntegrante2/el_padrino.jpg';
+import elPadrinoImg from '../../assets/ProfileIntegrante2/El_padrino.jpg';
 import matrixImg from '../../assets/ProfileIntegrante2/the_matrix.jpg';
 
 import './ProfileIntegrante2.css';
