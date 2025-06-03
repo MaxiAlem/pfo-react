@@ -77,18 +77,21 @@ const ProfileIntegrante1 = () => {
     
       {/* Cards proyectos */}
       <section className="projects-section">
-      <h2>algunos proyectitos</h2>
-      {proyectos.map(({ titulo, descripcion, tecnologias }, i) => (
+      <h2>Algunos proyectitos</h2>
+      <div>
+        {proyectos.map(({ titulo, descripcion, tecnologias }, i) => (
         <div key={i} className="project-card">
           <h3>{titulo}</h3>
           <p>{descripcion}</p>
           <p><strong>Tecnologías:</strong> {tecnologias}</p>
         </div>
       ))}
+        </div>
+      
     </section>
 
     <section className="skills-container">
-    <h2>herramientas con las que suelo trabajar</h2>
+    <h2>Herramientas con las que suelo trabajar</h2>
       {skills.map(({ name, icon }, i) => (
         <div key={i} className="skill-item">
           <div className="skill-icon">{icon}</div>
