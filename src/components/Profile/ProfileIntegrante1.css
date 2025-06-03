@@ -1,59 +1,53 @@
-.profile-page {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
+.profile-card {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+
 }
 
-.profile-page h1 {
-  font-size: 2rem;
-  color: var(--text-color, #333);
-  margin-bottom: 20px;
-}
 
-.profile-content {
+
+.card-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
-.profile-photo {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+.card-image {
+  flex: 1 1 30%;
+  max-width: 30%;
+}
+
+.card-image img {
+  width: 100%;
+  border-radius: 10px;
   object-fit: cover;
-  border: 2px solid var(--primary-color, #007bff);
 }
 
-.profile-details {
-  text-align: left;
+.card-text {
+  flex: 1 1 65%;
+  max-width: 65%;
+  font-size: 1.1rem;
 }
 
-.profile-details h2 {
-  font-size: 1.8rem;
-  color: var(--text-color, #333);
+.card-text h2 {
   margin-bottom: 10px;
 }
 
-.profile-details p {
-  color: var(--text-color, #666);
-  margin: 5px 0;
-}
-
-.profile-details ul {
-  list-style-type: disc;
-  margin-left: 20px;
-  color: var(--text-color, #666);
-}
-
-@media (min-width: 768px) {
-  .profile-content {
-    flex-direction: row;
-    align-items: flex-start;
+/* Móvil: apila la imagen y el texto en columna */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
   }
-
-  .profile-details {
-    flex: 1;
+  .card-image,
+  .card-text {
+    max-width: 100%;
+    flex: none;
+  }
+  .card-text {
+    margin-top: 15px;
   }
 }
