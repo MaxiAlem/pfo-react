@@ -39,7 +39,7 @@ function App() {
               <Route path="/bitacora" element={<BitacoraPage />} />
             </Routes>
           </div>
-          <WeatherWidget />
+          {/* <WeatherWidget /> */}
         </div>
       </BrowserRouter>
     </ThemeProvider>
