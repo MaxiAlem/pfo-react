@@ -74,15 +74,7 @@ const Sidebar = () => {
                 <span className="nav-text">Integrante 2</span>
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="/profile/integrante3"
-                className={({ isActive }) => (isActive ? "active" : "")}
-              >
-                <FaUser className="nav-icon" />
-                <span className="nav-text">Integrante 3</span>
-              </NavLink>
-            </li>
+           
             <li>
               <NavLink to="/json-data" className={({ isActive }) => (isActive ? "active" : "")}>
                 <FaDatabase className="nav-icon" />

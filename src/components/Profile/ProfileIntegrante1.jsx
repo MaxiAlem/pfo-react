@@ -6,11 +6,11 @@ const ProfileIntegrante1 = () => {
     <div className="profile-page">
       <h1>Perfil de Integrante 1</h1>
       <div className="profile-content">
-        <img
-          src="/assets/team/integrante1.jpg"
+        {/* <img
+          src='/../assets/ProfileIntegrante1/profile.jpg'
           alt="Integrante 1"
           className="profile-photo"
-        />
+        /> */}
         <div className="profile-details">
           <h2>Juan Pérez</h2>
           <p><strong>Rol:</strong> Desarrollador Frontend (Estructura y Diseño)</p>
