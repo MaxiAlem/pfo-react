@@ -6,7 +6,7 @@ import WeatherWidget from './components/Weather/WeatherWidget.jsx';
 import Home from './pages/Home.jsx';
 import Search from './pages/Search.jsx';
 import ProfileIntegrante1 from './pages/ProfileIntegrante1.jsx';
-import ProfileIntegrante2 from './pages/ProfileIntegrante2.jsx';
+import ProfileIntegrante2 from './components/Profile/ProfileIntegrante2.jsx';
 import ProfileIntegrante3 from './pages/ProfileIntegrante3.jsx';
 import JsonDataPage from './pages/JsonDataPage.jsx';
 import BitacoraPage from './pages/BitacoraPage.jsx';
