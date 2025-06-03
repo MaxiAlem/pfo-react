@@ -1,3 +1,4 @@
+/* ===== App general ===== */
 .app {
   display: flex;
   min-height: 100vh;
@@ -14,6 +15,7 @@
   margin-left: 250px;
 }
 
+/* ===== Weather Widget ===== */
 .weather-widget {
   position: fixed;
   bottom: 20px;
@@ -27,10 +29,11 @@
   color: var(--text-color);
 }
 
+/* ===== Theme Toggle ===== */
 .theme-toggle {
   position: absolute;
   top: 10px;
-  right: 60px; /* Evita superposición con el hamburguesa */
+  right: 60px;
   padding: 8px 16px;
   background: var(--accent-color);
   color: var(--text-color);
@@ -47,10 +50,169 @@ body.dark .theme-toggle:hover {
   background: #ccaa00;
 }
 
+/* ===== Layout Container ===== */
+.layout-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: #f9fafb;
+}
+
+main {
+  flex: 1;
+  padding: 1.5rem;
+}
+
+/* ===== Header ===== */
+header {
+  display: flex;
+  align-items: center;
+  background-color: #3b5897;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.hamburger {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 1rem;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  font-size: 1rem;
+  padding: 1rem 0;
+  text-align: center;
+  border-top: 1px solid #e5e7eb;
+  margin-top: auto;
+}
+
+footer a {
+  color: inherit;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 11rem;
+  height: 100%;
+  background-color: #3b5897;
+  padding: 1rem;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.sidebar nav {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-link {
+  padding: 0.75rem;
+  text-decoration: none;
+  color: #333;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.sidebar a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: 1rem;
+  border-radius: 0.5rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background-color: #dee2ed;
+  color: #283c66;
+}
+
+/* ===== Overlay ===== */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ===== Media Queries ===== */
 @media (max-width: 768px) {
   .content {
     margin-left: 0;
-    padding-top: 50px; /* Espacio para el toggle */
+    padding-top: 50px;
   }
 
   .app:has(.sidebar.expanded) .content {
@@ -79,5 +241,18 @@ body.dark .theme-toggle:hover {
     right: 45px;
     padding: 6px 12px;
     font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    transform: translateX(0);
+    position: static;
+    height: 100vh;
+  }
+
+  .close-btn,
+  .overlay {
+    display: none;
   }
 }
