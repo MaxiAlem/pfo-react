@@ -9,6 +9,7 @@ import project3Img from '../../assets/ProfileIntegrante2/project3.jpg';
 import interstellarImg from '../../assets/ProfileIntegrante2/interstellar.jpg';
 import elPadrinoImg from '../../assets/ProfileIntegrante2/el_padrino.jpg';
 import matrixImg from '../../assets/ProfileIntegrante2/the_matrix.jpg';
+
 import './ProfileIntegrante2.css';
 
 const ProfileIntegrante2 = () => {
